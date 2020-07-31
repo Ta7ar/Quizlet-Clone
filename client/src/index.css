@@ -1,0 +1,434 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+h4, h2, p {
+  margin: 0;
+  overflow: auto;
+}
+
+div {
+  user-select: none;
+}
+
+p::-webkit-scrollbar{
+  visibility: hidden;
+}
+
+.App {
+  min-height: 100vh;
+  width: 100vw;
+  transition: 150ms ease-in-out;
+  
+}
+
+.App.light {
+  background-color: #e5e5e5;
+  --background-color: #e5e5e5;
+  --text-color: #5f5f5f;
+  color: #5f5f5f;
+  --card-color: whitesmoke;
+  --box-shadow: 0 0 0.25rem 0.25rem rgba(200, 200, 200, 0.1);
+  text-shadow: 0 0 1px rgba(200, 200, 200, 1);
+  
+}
+
+.App.dark {
+  background-color: #222222;
+  --background-color: #222222;
+  color: rgb(129, 129, 129);
+  --text-color: rgb(129,129,129);
+  --card-color: #2c2c2c;
+  --box-shadow: 0 0 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
+  text-shadow: 0 0 1px rgba(129, 129, 129, 1);
+  
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 0.5rem;
+  background-color: var(--card-color);
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  transition: 500ms;
+  transform: perspective(1000px) rotateY(var(--rotate-y, 0))
+    translateY(var(--translate-y, 0));
+  transform-style: preserve-3d;
+  width: 40vh;
+  margin: 0 auto;
+  height: 70vh;
+  top: 1rem;
+
+
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  padding: 1rem;
+  backface-visibility: hidden;
+}
+
+.card .back {
+  transform: rotateY(180deg);
+}
+
+.card.flip {
+  --rotate-y: 180deg;
+}
+.card:hover {
+  --translate-y: -5px;
+}
+
+
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 3rem;
+  top: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--card-color);
+  box-shadow: var(--box-shadow);
+  gap: 0.25rem;
+}
+
+.navbar div {
+  cursor: pointer;
+ 
+  transition: 150ms;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar i {
+  padding: 1rem;
+  padding-right: 2rem;
+}
+
+.navbar div:hover {
+  transform: translateY(-0.25rem);
+}
+.navbar div:active {
+  transform: scale(0.9);
+}
+
+.navbar a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.form{
+  
+  width: 100vw;
+  
+  border-radius: 0.5rem;
+  
+  margin: 0 auto;
+  margin-top: 1rem;
+  background-color: var(--card-color);
+  box-shadow: var(--box-shadow);
+  
+}
+
+
+.form form{
+  height: 100%;
+  display: grid;
+  
+}
+.form label{
+  padding: 1rem;
+  
+}
+
+input{
+  height: 1.5rem;
+  width:100%;
+  box-sizing: border-box;
+  padding: 0;
+  border: solid 0px var(--text-color);
+  border-radius: 0.25rem ;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  box-shadow: var(--box-shadow);
+  outline: none;
+  transition: border-width 100ms linear;
+  padding-left: 0.25rem;
+  
+  
+
+}
+
+input:hover{
+  border-width: 1.5px;
+  
+  
+}
+
+ button, .create-deck {
+  width: 25%;
+  height: 1.5rem;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  color: whitesmoke;
+ 
+  border-radius: 0.25rem;
+  box-shadow: var(--box-shadow);
+  background-color: rgb(33, 145, 197) ;
+  transition: 300ms;
+  
+}
+
+ button:active, .create-deck:active{
+  border: none;
+  outline: none;
+  transform: scale(0.95);
+}
+
+
+
+.form div{
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/*spinner*/
+
+.spinner{
+  width: 5rem;
+  padding: 0.5rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.spinner div{
+  height: 1rem;
+  width: 1rem;
+  background-color: var(--text-color);
+  border-radius: 100%;
+  margin: 0 auto;
+}
+
+.spinner div:nth-child(1){
+  animation-name: pulse;
+  animation-delay: 0;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+
+}
+.spinner div:nth-child(2){
+  animation-name: pulse;
+  animation-delay: 0.25s;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  
+}
+.spinner div:nth-child(3){
+  animation-name: pulse;
+  animation-delay: 0.5s;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  0%{
+    transform: scale(1.2);
+  }
+  
+}
+
+
+
+.card-counter{
+  background-color: var(--card-color);
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+  border-radius: 100%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 0.5rem;
+  cursor: pointer;
+
+}
+
+.modal-canvas{
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(3px);
+  animation: fade 0.5s;
+}
+
+.modal-body{
+  position: absolute;
+  width: 70vw;
+  max-height: 60vh;
+  background-color: var(--card-color);
+  top: 50vh;
+  left: 50vw;
+  transform: translateY(-50%) translateX(-50%);
+  border-radius: 0.5rem;
+  animation: fade 0.5s;
+  overflow-y: auto;
+  padding: 1rem;
+  z-index: 6;
+  
+}
+.modal-body::-webkit-scrollbar{
+  visibility: hidden;
+}
+.modal-close{
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  top: 85vh;
+  left: 50vw;
+  transform: translateX(-50%);
+  
+}
+.modal-close:active{
+  
+  top: 85vh;
+  left: 50vw;
+  transform: translateX(-50%) scale(0.9);
+  
+}
+
+@keyframes fade{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.deck-tile{
+  display: inline-block;
+  height: 5rem;
+  width: 5rem;
+  padding: 1rem;
+  margin: 1rem;
+  vertical-align: bottom;
+  background-color: var(--card-color);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  position: relative;
+}
+
+.deck-tile-container{
+   transition: 0.1s ease-in-out;
+}
+.deck-tile-container:hover{
+  transform: translateY(-0.5rem);
+}
+
+.deck-tile button{
+  background-color: #F40000 ;
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 100%;
+  right:0%;
+  top:0%;
+  transform: translateX(50%) translateY(-50%);
+  
+  
+}
+
+.popover{
+  width: 5rem;
+  position: absolute;
+  z-index: 5;
+  top: 35%;
+  right: 0%;
+}
+.cards-view{
+  background-color: var(--background-color);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.cards-view button {
+  position: absolute;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 100%;
+  right: 5%;
+  top: 5%;
+}
+
+.chevron{
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 5rem;
+  transition: 150ms ease-in-out;
+}
+.chevron:hover{
+  transform: scale(1.1);
+}
+.chevron:active{
+  transform: scale(0.9);
+}
+
+.current-card {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--card-color);
+  border-radius: 100%;
+  box-shadow: var(--box-shadow);
+}
+
+.deck-creator, .home, .popover, .cards-view {
+  animation: fade 0.5s;
+}
+
+@media (orientation: landscape){
+  .form{
+    width: 60vh;
+    
+  }
+}
