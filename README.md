@@ -1,7 +1,7 @@
 # Flippy-Cards
 Create and use your own Flashcards!
 
-###Tech Used:
+### Tech Used:
 
 * ReactJS /HTML/ CSS (All custom made and styled components)
 * NodeJS + ExpressJS
@@ -9,5 +9,5 @@ Create and use your own Flashcards!
 * Jsonwebtoken
 * BcryptJS
 
-###Deplyed at: 
+### Deplyed at: 
 https://flippycards.herokuapp.com/
