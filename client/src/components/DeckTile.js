@@ -5,7 +5,7 @@ const axios = require("axios").default;
 function DeckTile({ children, getDecks }) {
   const { name, cards, _id } = children;
   const [popover, togglePopover] = useState(false);
-  const [cardView, toggleCardView] = useState(!false);
+  const [cardView, toggleCardView] = useState(false);
 
   const deleteDeck = (e) => {
     e.stopPropagation();

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Navbar({ toggleTheme, isLoggedIn, toggleLoggedIn }) {
   const handleLogout = () => {
     //delete json webtoken from local storage
-    localStorage.removeItem("auth-key");
+    localStorage.removeItem("auth-token");
     toggleLoggedIn(false);
   };
 

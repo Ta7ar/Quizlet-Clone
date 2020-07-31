@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import DeckTile from "./DeckTile";
-import Spinner from './Spinner';
+import Spinner from "./Spinner";
 const axios = require("axios").default;
 
 function Home({ isLoggedIn }) {
@@ -17,27 +17,29 @@ function Home({ isLoggedIn }) {
       .then((res) => {
         setDecks(res.data);
         setLoading(false);
-      }).catch((err)=>{
+      })
+      .catch((err) => {
         if (err) throw err;
       });
-  }
-  useEffect(getDecks,[]);
+  };
+  useEffect(getDecks, []);
   if (!isLoggedIn) {
     return (
       <div>
-        <Card
-          question="Get Started by Clicking Me!"
-          answer="Create an account, create your own deck and your flippy cards will show up here!"
-        />
+        <Card>
+          {{
+            question: "Click Me to get started!",
+            answer:
+              "Create an account, log in, make your deck of cards and use them!",
+          }}
+        </Card>
       </div>
     );
   }
 
-  
-
   return (
     <div className="home" style={{ padding: "1rem" }}>
-      {loading && <Spinner/>}
+      {loading && <Spinner />}
       {decks.map((deck) => {
         return <DeckTile getDecks={getDecks}>{deck}</DeckTile>;
       })}
