@@ -23,13 +23,14 @@ function CardsView({ children: cards, toggle }) {
       >
         &#10006;
       </button>
-      <div className="chevron left" onClick={previousCard}>
-        &#x2039;
-      </div>
-      <Card>{cards[currentIndex]}</Card>
-      <div className="chevron right" onClick={nextCard}>
-        &#x203A;
-      </div>
+        <div className="chevron left" onClick={previousCard}>
+          &#x2039;
+        </div>
+        <Card>{cards[currentIndex]}</Card>
+        <div className="chevron right" onClick={nextCard}>
+          &#x203A;
+        </div>
+      
       <div className="current-card">{currentIndex + 1}</div>
     </div>
   );

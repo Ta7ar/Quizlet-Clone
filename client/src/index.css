@@ -369,7 +369,7 @@ input:hover{
 }
 .cards-view{
   background-color: var(--background-color);
-  position: fixed;
+  position: absolute;
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -378,14 +378,17 @@ input:hover{
   align-items: center;
   z-index: 10;
 }
+.cards-view .card {
+  top: -5%;
+}
 
 .cards-view button {
   position: absolute;
   height: 3rem;
   width: 3rem;
   border-radius: 100%;
-  right: 5%;
-  top: 5%;
+  right: 2.5%;
+  top: 2.5%;
 }
 
 .chevron{
@@ -407,7 +410,7 @@ input:hover{
 
 .current-card {
   position: absolute;
-  bottom: 5%;
+  bottom: 10%;
   left: 50%;
   -webkit-transform: translateX(-50%);
   height: 3rem;
