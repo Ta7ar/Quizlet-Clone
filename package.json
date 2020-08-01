@@ -19,7 +19,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "concurrently \"nodemon index.js\" \"cd client & npm run start\"",
-    "heroku-postbuild": "npm install && cd client && npm install"
+    "heroku-postbuild": "npm install && cd client && npm install --only=dev && npm install && npm run build"
   },
   "author": "Imon Tatar",
   "license": "MIT"

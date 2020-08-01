@@ -60,9 +60,12 @@ p::-webkit-scrollbar{
   box-shadow: var(--box-shadow);
   cursor: pointer;
   transition: 500ms;
+  -webkit-transition: 500ms;
   transform: perspective(1000px) rotateY(var(--rotate-y, 0))
     translateY(var(--translate-y, 0));
+  -webkit-transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   width: 40vh;
   margin: 0 auto;
   height: 70vh;
@@ -76,10 +79,12 @@ p::-webkit-scrollbar{
   position: absolute;
   padding: 1rem;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .card .back {
   transform: rotateY(180deg);
+  -webkit-transform: (180deg);
 }
 
 .card.flip {
