@@ -59,12 +59,10 @@ p::-webkit-scrollbar{
   background-color: var(--card-color);
   box-shadow: var(--box-shadow);
   cursor: pointer;
-  transition: 500ms;
   -webkit-transition: 500ms;
-  transform: perspective(1000px) rotateY(var(--rotate-y, 0))
-    translateY(var(--translate-y, 0));
+  
   -webkit-transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
-  transform-style: preserve-3d;
+  
   -webkit-transform-style: preserve-3d;
   width: 40vh;
   margin: 0 auto;
@@ -78,13 +76,11 @@ p::-webkit-scrollbar{
 .card .back {
   position: absolute;
   padding: 1rem;
-  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
 .card .back {
-  transform: rotateY(180deg);
-  -webkit-transform: (180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 .card.flip {
@@ -110,7 +106,7 @@ p::-webkit-scrollbar{
 .navbar div {
   cursor: pointer;
  
-  transition: 150ms;
+  -webkit-transition: 150ms;
   position: relative;
   display: flex;
   align-items: center;
@@ -123,10 +119,10 @@ p::-webkit-scrollbar{
 }
 
 .navbar div:hover {
-  transform: translateY(-0.25rem);
+  -webkit-transform: translateY(-0.25rem);
 }
 .navbar div:active {
-  transform: scale(0.9);
+  -webkit-transform: scale(0.9);
 }
 
 .navbar a{
@@ -173,7 +169,7 @@ input{
   color: var(--text-color);
   box-shadow: var(--box-shadow);
   outline: none;
-  transition: border-width 100ms linear;
+  -webkit-transition: border-width 100ms linear;
   padding-left: 0.25rem;
   
   
@@ -197,14 +193,14 @@ input:hover{
   border-radius: 0.25rem;
   box-shadow: var(--box-shadow);
   background-color: rgb(33, 145, 197) ;
-  transition: 300ms;
+  -webkit-transition: 300ms;
   
 }
 
  button:active, .create-deck:active{
   border: none;
   outline: none;
-  transform: scale(0.95);
+  -webkit-transform: scale(0.95);
 }
 
 
@@ -296,7 +292,7 @@ input:hover{
   background-color: var(--card-color);
   top: 50vh;
   left: 50vw;
-  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
   border-radius: 0.5rem;
   animation: fade 0.5s;
   overflow-y: auto;
@@ -313,14 +309,14 @@ input:hover{
   height: 2rem;
   top: 85vh;
   left: 50vw;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
   
 }
 .modal-close:active{
   
   top: 85vh;
   left: 50vw;
-  transform: translateX(-50%) scale(0.9);
+  -webkit-transform: translateX(-50%) scale(0.9);
   
 }
 
@@ -348,10 +344,10 @@ input:hover{
 }
 
 .deck-tile-container{
-   transition: 0.1s ease-in-out;
+   -webkit-transition: 0.1s ease-in-out;
 }
 .deck-tile-container:hover{
-  transform: translateY(-0.5rem);
+  -webkit-transform: translateY(-0.5rem);
 }
 
 .deck-tile button{
@@ -362,7 +358,7 @@ input:hover{
   border-radius: 100%;
   right:0%;
   top:0%;
-  transform: translateX(50%) translateY(-50%);
+  -webkit-transform: translateX(50%) translateY(-50%);
   
   
 }
@@ -403,20 +399,20 @@ input:hover{
   justify-content: center;
   cursor: pointer;
   font-size: 5rem;
-  transition: 150ms ease-in-out;
+  -webkit-transition: 150ms ease-in-out;
 }
 .chevron:hover{
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
 }
 .chevron:active{
-  transform: scale(0.9);
+  -webkit-transform: scale(0.9);
 }
 
 .current-card {
   position: absolute;
   bottom: 5%;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
   height: 3rem;
   width: 3rem;
   display: flex;
