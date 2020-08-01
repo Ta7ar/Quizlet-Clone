@@ -10,12 +10,13 @@ function Card({ children: { question, answer } }) {
         toggleFlip(!flipped);
       }}
     >
-      <div className="front">
-        <h4>{question}</h4>
-      </div>
-      <div className="back">
-        <h4>{answer}</h4>
-      </div>
+        <div className="front">
+          <h4>{question}</h4>
+        </div>
+        <div className="back">
+          <h4>{answer}</h4>
+        </div>
+      
     </div>
   );
 }

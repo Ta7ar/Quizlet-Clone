@@ -60,9 +60,7 @@ p::-webkit-scrollbar{
   box-shadow: var(--box-shadow);
   cursor: pointer;
   -webkit-transition: 500ms;
-  
-  -webkit-transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
-  
+  -webkit-transform:  perspective(1000px) ;
   -webkit-transform-style: preserve-3d;
   width: 40vh;
   margin: 0 auto;
@@ -79,15 +77,14 @@ p::-webkit-scrollbar{
   -webkit-backface-visibility: hidden;
 }
 
+
 .card .back {
   -webkit-transform: rotateY(180deg);
 }
 
-.card.flip {
-  --rotate-y: 180deg;
-}
-.card:hover {
-  --translate-y: -5px;
+
+.card.flip{
+  transform: rotateY(180.1deg);
 }
 
 
@@ -429,7 +426,7 @@ input:hover{
 
 @media (orientation: landscape){
   .form{
-    width: 60vh;
+    width: 75vh;
     
   }
 }
