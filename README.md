@@ -1,4 +1,4 @@
-# Flippy-Cards
+# Quizlet Clone
 Create and use your own Flashcards!
 
 ### Tech Used:
