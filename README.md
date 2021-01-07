@@ -9,5 +9,5 @@ Create and use your own Flashcards!
 * Jsonwebtoken
 * BcryptJS
 
-### Deplyed at: 
+### Deployed at: 
 https://flippycards.herokuapp.com/
